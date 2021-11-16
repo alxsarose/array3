@@ -1,16 +1,26 @@
-# This is a sample Python script.
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+import sys
+import importlib
+
+from TK_1 import input_data_from_console
+from TK_2 import get_min_max_from_list
+from TK_3 import get_divided_list
+from TK_4 import get_multiplied_list
+
+TK_5 = importlib.import_module('TK-5')
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+def main():
+    count_elements = int(input('Get number of elements:'))
+    list_data = input_data_from_console(count_elements)
+    print(get_min_max_from_list(list_data))
+    print(get_divided_list(list_data))
+    print(get_multiplied_list(list_data))
+    print(TK_5.get_squared_list(list_data))
+    return 0
 
 
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    sys.exit(main())
